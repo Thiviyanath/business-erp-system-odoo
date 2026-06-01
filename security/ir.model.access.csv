@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_business_product,business.product,model_business_product,base.group_user,1,1,1,1
+access_business_customer,business.customer,model_business_customer,base.group_user,1,1,1,1
+access_vehicle_sales,vehicle.sales,model_vehicle_sales,base.group_user,1,1,1,1
+access_business_dashboard,business.dashboard,model_business_dashboard,base.group_user,1,1,1,1
+access_business_invoice,business.invoice,model_business_invoice,base.group_user,1,1,1,1

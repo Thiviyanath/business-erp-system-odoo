@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_business_dashboard_form" model="ir.ui.view">
+        <field name="name">business.dashboard.form</field>
+        <field name="model">business.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="ERP Dashboard" create="false" edit="false">
+                <sheet>
+
+                    <div class="oe_title">
+                        <h1>Vehicle Business ERP Dashboard</h1>
+                    </div>
+
+                    <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:20px;">
+
+                        <div style="background:#eef4ff; padding:20px; border-radius:12px; width:220px;">
+                            <h3>Total Vehicles</h3>
+                            <h1><field name="total_products" readonly="1"/></h1>
+                        </div>
+
+                        <div style="background:#eefaf1; padding:20px; border-radius:12px; width:220px;">
+                            <h3>Total Customers</h3>
+                            <h1><field name="total_customers" readonly="1"/></h1>
+                        </div>
+
+                        <div style="background:#fff7e6; padding:20px; border-radius:12px; width:220px;">
+                            <h3>Total Sales</h3>
+                            <h1><field name="total_sales" readonly="1"/></h1>
+                        </div>
+
+                        <div style="background:#f3e8ff; padding:20px; border-radius:12px; width:220px;">
+                            <h3>Total Profit</h3>
+                            <h1>Rs. <field name="total_profit" readonly="1"/></h1>
+                        </div>
+
+                    </div>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dashboard_action" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">business.dashboard</field>
+        <field name="view_mode">form</field>
+    </record>
+
+    <menuitem id="dashboard_menu"
+              name="Dashboard"
+              parent="business_erp_root"
+              action="dashboard_action"
+              sequence="0"/>
+
+</odoo>

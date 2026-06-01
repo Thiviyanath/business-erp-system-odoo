@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_product_list" model="ir.ui.view">
+        <field name="name">business.product.list</field>
+        <field name="model">business.product</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="category"/>
+                <field name="buying_price"/>
+                <field name="selling_price"/>
+                <field name="stock_quantity"/>
+                <field name="low_stock_limit"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_product_form" model="ir.ui.view">
+        <field name="name">business.product.form</field>
+        <field name="model">business.product</field>
+        <field name="arch" type="xml">
+            <form string="Product">
+                <sheet>
+                    <group>
+                        <field name="image" widget="image" class="oe_avatar"/>
+                        <field name="name"/>
+                        <field name="product_code"/>
+                        <field name="category"/>
+                        <field name="buying_price"/>
+                        <field name="selling_price"/>
+                        <field name="stock_quantity"/>
+                        <field name="low_stock_limit"/>
+                        <field name="status" readonly="1"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_product_search" model="ir.ui.view">
+        <field name="name">business.product.search</field>
+        <field name="model">business.product</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="category"/>
+                <field name="status"/>
+
+                <filter string="Available" name="available" domain="[('status','=','available')]"/>
+                <filter string="Low Stock" name="low_stock" domain="[('status','=','low_stock')]"/>
+                <filter string="Sold Out" name="sold_out" domain="[('status','=','sold_out')]"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Vehicle Type" name="group_category" context="{'group_by':'category'}"/>
+                    <filter string="Status" name="group_status" context="{'group_by':'status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="product_action" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">business.product</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="business_erp_root"
+              name="Business ERP"
+              action="product_action"
+              sequence="1"/>
+
+    <menuitem id="product_menu"
+              name="Products"
+              parent="business_erp_root"
+              action="product_action"
+              sequence="1"/>
+
+</odoo>

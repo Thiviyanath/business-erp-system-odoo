@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Vehicles -->
+
+    <record id="vehicle_1" model="business.product">
+        <field name="name">Toyota Aqua 2015</field>
+        <field name="product_code">AQUA001</field>
+        <field name="category">Hybrid</field>
+        <field name="buying_price">4500000</field>
+        <field name="selling_price">5200000</field>
+        <field name="stock_quantity">2</field>
+    </record>
+
+    <record id="vehicle_2" model="business.product">
+        <field name="name">Honda Vezel 2017</field>
+        <field name="product_code">VEZ001</field>
+        <field name="category">SUV</field>
+        <field name="buying_price">7800000</field>
+        <field name="selling_price">8600000</field>
+        <field name="stock_quantity">1</field>
+    </record>
+
+    <!-- Customers -->
+
+    <record id="customer_1" model="business.customer">
+        <field name="name">Nimal Perera</field>
+        <field name="contact_number">0771234567</field>
+        <field name="email">nimal@gmail.com</field>
+        <field name="customer_type">individual</field>
+    </record>
+
+    <record id="customer_2" model="business.customer">
+        <field name="name">ABC Holdings</field>
+        <field name="contact_number">0112345678</field>
+        <field name="email">abc@gmail.com</field>
+        <field name="customer_type">business</field>
+    </record>
+
+</odoo>
