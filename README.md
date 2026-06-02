@@ -75,7 +75,32 @@ business_erp_system/
 ├── __init__.py
 ```
 
----
+## System Screenshots
+
+### Dashboard Analytics
+
+![Dashboard](screenshots/dashboard.png)
+
+### Vehicle Management
+
+![Vehicle Details](screenshots/vehicle_details.png)
+
+### Customer Management
+
+![Customer Details](screenshots/customer_details.png)
+
+### Invoice System
+
+![Invoice](screenshots/invoice_buttons.png)
+
+### Product Search & Filters
+
+![Search Filter](screenshots/products_search_filter.png)
+
+### Sales Analytics Graph
+
+![Sales Graph](screenshots/sales_graph.png)
+
 
 ## Installation
 
